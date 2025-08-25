@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StringProject</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <h1 class="bg-success text-white text-center h-75 p-3 fs-1">String Operation</h1>
+
+    
+        <div class="form-floating  w-75 mx-auto mt-3">
+            
+        <textarea class="form-control" placeholder="Leave a comment here" id="InputString" style="height: 100px"></textarea>
+        <label for="InputString">Enter something</label>
+        
+        </div>
+    <div id="result" class=" overflow-auto text-info bg-dark text-center p-2 fs-3 w-50 h-50 m-5 d-flex justify-content-center mx-auto">
+  Result will appear here
+</div>
+    <div class="container mt-3">
+  <div class="row text-center g-4">
+    <div class="col-3"><button class="btn btn-primary w-100 " type="button" onclick="CountVolves()">Count Vowels</button></div>
+    <div class="col-3"><button class="btn btn-primary w-100" type="button" onclick="capitalise()">Capitalise</button></div>
+    <div class="col-3"><button class="btn btn-primary w-100" type="button" onclick="convertSmallCase()">SmallCase</button></div>
+    <div class="col-3"><button class="btn btn-primary w-100" type="button" onclick="checkConsonants()">Check Consonants</button></div>
+
+    <div class="col-3"><button class="btn btn-primary w-100" type="button" onclick="checkPalindrome()">Check Palindrome</button></div>
+    <div class="col-3"><button class="btn btn-primary w-100" type="button" onclick="spacesCount()">Count Spaces</button></div>
+    <div class="col-3"><button class="btn btn-primary w-100" type="button" onclick="extractWord()">Extract First Word</button></div>
+    <div class="col-3"><button class="btn btn-primary w-100" type="button" onclick="countLines()">Count New Lines</button></div>
+<div class="row text-center g-3 justify-content-center">
+    <div class="col-3 "><button class="btn btn-primary w-100" type="button" onclick="replaceSpace()">Replace Spaces with Hyphens</button></div>
+    <div class="col-3 "><button class="btn btn-primary w-100" type="button" onclick="reverseChar()">Reverse Characters</button></div>
+    <div class="col-3 "><button class="btn btn-primary w-100" type="button">Sort the Words</button></div>
+  </div>
+  </div>
+</div>
+</div>
+
+    <script src="script.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    
+</body>
+
+</html>
