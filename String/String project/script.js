@@ -1,6 +1,13 @@
 inputElement = document.querySelector('#InputString')
 resultElement = document.querySelector('#result')
 
+function reset(){
+  resultElement.textContent=null
+}
+function inputreset(){
+textInput=inputElement.value=""
+}
+
 function capitalise(){
     inputText = inputElement.value
     resultElement.textContent = inputText.toUpperCase()
