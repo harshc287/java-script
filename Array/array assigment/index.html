@@ -7,39 +7,75 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-  <title>To Do List</title>
+  <title>Array Assigment</title>
 </head>
 
 <body class="bg-dark">
-
+<!-- To du list -->
 <div class=" container bg-secondary p-3 text-center mt-3">
-    <h1 class=" d-flex  justify-content-center">To Do List</h1><br>
+    <h1>To Do List</h1><br>
     <input type="text" class="form-control p-2 " id="taskInput" placeholder="EnterTask">
-        <button class="btn btn-primary w-25 m-4 p-2  " type="button" onclick="addTask()">add task</button>
-        <button class="btn btn-primary w-25  m-4 p-2 " type="button " onclick="clearList()">clear</button>
-    <ul id="taskList" class=" p-4 list-group"></ul>
+        <button class="btn btn-dark w-25 m-4 p-2  " type="button" onclick="addTask()">add task</button>
+        <button class="btn btn-dark w-25  m-4 p-2 " type="button " onclick="clearList()">clear</button>
+    <ul id="taskList" class=" p-4 list-group "></ul>
     </div>
 
+<!-- Students Marks Calculator -->
+
   <div class=" container bg-secondary p-3 mt-5 text-center">
-    <h1 class=" d-flex  justify-content-center ">Students Marks Calculator</h1><br>
+    <h1>Students Marks Calculator</h1><br>
     <input type="text" class="form-control p-2 " id="markInput" placeholder="Enter Marks">
-        <button class="btn btn-primary w-25 m-4 p-2  " type="button" onclick="addMark()">Add Marks</button>
-        <button class="btn btn-primary w-25 m-4 p-2  " type="button" onclick="calculate()">Calculate</button>
-        <button class="btn btn-primary w-25  m-4 p-2 " type="button" onclick="resetMarks()">Reset</button>
+        <button class="btn btn-dark w-25 m-4 p-2  " type="button" onclick="addMark()">Add Marks</button>
+        <button class="btn btn-dark w-25 m-4 p-2  " type="button" onclick="calculate()">Calculate</button>
+        <button class="btn btn-dark w-25  m-4 p-2 " type="button" onclick="resetMarks()">Reset</button>
     
         <div class="marks-list">
             <h3>Marks Entered:</h3>
-            <ul id="marksDisplay"></ul>
+            <ul id="marksDisplay" class=" list-unstyled"></ul>
       </div>
     
         <div id="results">Result</div>
         </div>
+<!-- Search in array -->
+        <div class="container bg-secondary p-3 mt-5 text-center">
+          <h1>Search in array</h1><br>
+          <input class="form-control p-2"  id="inputSearch">
+          <button class="btn btn-dark w-25  m-4 p-2" onclick="search()">Search</button>
+          <p id="resultSearch" class="lead"></p>
+        </div>
+
+<!-- Filter Even ANd Odd -->
+        <div class="container bg-secondary p-3 mt-5 text-center">
+          <h1>Filter Even ANd Odd</h1><br>
+          <input class="form-control" type="number" id="num1">
+           <button class="btn btn-dark w-25 m-4 p-2  "  onclick="addNumbers()">Add Numbers</button>
+        <button class="btn btn-dark w-25 m-4 p-2  "  onclick="showEvenNumbers()">Show Even</button>
+        <button class="btn btn-dark w-25  m-4 p-2 "  onclick="showOddNumbers()">Show Odd</button>
+        <button class="btn btn-dark w-25  m-2 p-2 "  onclick="clearArray()">Clear</button>
+
+        <div>
+          <p> Even Numbers : <span class="lead" id="evenNum"></span></p>
+          <p> Even Numbers : <span class="lead" id="oddNum"></span></p>
+        </div>
+        </div>
+
+<!-- short names alphabetically -->
+
+<div class="container bg-secondary p-3 mt-5 text-center">
+  <h1>Sort Names Alphabeticaly</h1><br>
+    <input class="form-control" type="text" id="inputName">
+    <button class="btn btn-dark w-25 m-4 p-2  "  onclick="addName()">Add Name</button>
+    <button class="btn btn-dark w-25  m-4 p-2 "  onclick="shortName()">ShortNames</button>
+    <button class="btn btn-dark w-25  m-4 p-2 "  onclick="resetName()">Reset</button>
+
+    <div id="shortedNames">Shorted Names Are:</div>
+</div>
 
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
     crossorigin="anonymous"></script>
-  <script src="script.js"></script
+  <script src="script.js"></script>
 
 </body>
 

@@ -5,7 +5,7 @@ function renderTasks(){
 
     taskList.innerHTML = tasks
         .map((task, index) => {
-          return `<li class="list-group-item m-3 ">${task} 
+          return `<li class="list-group-item m-2 ">${task} 
           <button class="btn btn-info ms-4" onclick="removeTask(${index})">Delete</button>
           </li>`;
         })
@@ -81,10 +81,10 @@ function calculate(){
     let lowest = Math.min(...numbers);
 
     document.querySelector('#results').innerHTML=`
-    <p>Total Marks: ${total}</p>
-    <p>Average Marks: ${avg}</p>
-    <p>Highest Mark: ${highest}</p>
-    <p>Lowest Mark: ${lowest}</p>`
+    <p class="lead">Total Marks: ${total}</p>
+    <p class="lead">Average Marks: ${avg}</p>
+    <p class="lead">Highest Mark: ${highest}</p>
+    <p class="lead">Lowest Mark: ${lowest}</p>`
 }
 // function resetMarks() {
 //   marks = [];
@@ -104,4 +104,89 @@ function resetMarks() {
 
   const input = document.getElementById('markInput'); 
   if (input) input.value = '';  
+}
+
+//search array
+cars = ['Audi', 'BMW','Hondyi', 'mahindra', 'Tesla', 'Tata']
+inputSearch= document.querySelector('#inputSearch')
+
+function search(){
+  inputWord = inputSearch.value
+  result= cars.find((c)=>c.toLowerCase()== inputWord.toLowerCase())
+  console.log(result)
+  if(result){
+    document.querySelector('#resultSearch').innerHTML= result
+  }else{
+    document.querySelector('#resultSearch').innerHTML= 'NotFound'
+  }
+}
+
+//evenOdd
+num1elmt = document.querySelector('#num1')
+let numberArray = []
+function addNumbers(){
+  numberArray.push(Number(num1elmt.value))
+  num1elmt.value = ''
+}
+
+function clearArray(){
+  numberArray=[]
+
+}
+//even
+function showEvenNumbers(){
+  evenNumbers = numberArray.filter((n)=> n%2==0)
+  document.querySelector('#evenNum').innerHTML = evenNumbers
+}
+
+//odd
+function showOddNumbers(){
+  oddNumbers = numberArray.filter((n)=>n%2!=0)
+  document.querySelector('#oddNum').innerHTML = oddNumbers
+}
+function clearArray(){
+  numberArray=[]
+
+  const evenNum = document.getElementById('evenNum');
+  if (evenNum) evenNum.innerHTML = '';
+  
+    const oddNum = document.getElementById('oddNum');
+  if (oddNum) oddNum.innerHTML = '';
+}
+
+//shortnames alphabetically
+let sortNames= []
+function addName(){
+inputNames= document.querySelector('#inputName')
+let name = inputNames.value.trim()
+
+if(name){
+  sortNames.push(name)
+  inputNames.value = ""
+  displayNames()
+}
+}
+
+function shortName(){
+  sortNames.sort()
+  displayNames()
+}
+
+
+function displayNames(){
+  let output = document.querySelector('#shortedNames')
+
+  let listHTML= '<ul class=" list-unstyled">'
+  sortNames.forEach((name, index) =>{
+    listHTML += `<li>
+                ${index + 1}.${name}                
+                </li>`
+  });
+  listHTML += "</ul>";
+  output.innerHTML = listHTML;
+}
+
+function resetName(){
+  const shortedNames = document.getElementById('shortedNames');
+  if (shortedNames) shortedNames.innerHTML = '';
 }
