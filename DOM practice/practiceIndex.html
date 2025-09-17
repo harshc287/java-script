@@ -45,42 +45,73 @@
   #sliderImage.fade-out {
     opacity: 0;
   }
+
   .clock-container {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 30px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            width: 100%;
-            max-width: 800px;
-        }
-        
-        .clock {
-            font-size: 5rem;
-            font-weight: 700;
-            color: black;
-            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
-            text-align: center;
-            padding: 30px 0;
-            font-family: 'Courier New', monospace;
-            letter-spacing: 5px;
-        }
-        
-        .date {
-            font-size: 1.8rem;
-            color: rgba(255, 255, 255, 0.9);
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 800px;
+
+  }
+
+  .clock {
+    font-size: 5rem;
+    font-weight: 700;
+    color: black;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    padding: 30px 0;
+    font-family: 'Courier New', monospace;
+    letter-spacing: 5px;
+  }
+
+  .date {
+    font-size: 1.8rem;
+    color: rgba(255, 255, 255, 0.9);
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+   #quiz {
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+      padding: 30px;
+      width: 400px;
+      text-align: center;
+    }
+    #quiz:hover{
+      background-color: rgb(214, 253, 253);
+    }
+    .option {
+      margin: 10px 0;
+      border-radius: 12px;
+      transition: transform 0.2s ease;
+    }
+
+    .option:hover {
+      transform: scale(1.03);
+    }
+
+    #score {
+      font-weight: bold;
+      margin-top: 15px;
+      color: #333;
+    }
+
+  /* floating animation */
 </style>
 
 <body class="bg-dark,text-light">
 
   <nav class=" m-3 fixed-top">
- <button class="btn btn-outline-light text-dark" id="colorToggle">
-                <i class="fas fa-palette me-1"></i>Change Color Theme
-            </button>  </nav>
+    <button class="btn btn-outline-light text-dark" id="colorToggle">
+      <i class="fas fa-palette me-1"></i>Change Color Theme
+    </button>
+  </nav>
 
 
   <div class="container mt-5 mb-5">
@@ -134,11 +165,11 @@
   <div class="container py-5">
     <h1 class=" text-center mb-1 text-decoration-underline text-capitalize">Image Slider</h1>
     <div class="row justify-content-center">
-       <div class="col-md-8 text-center">
+      <div class="col-md-8 text-center">
         <div class="card shadow">
           <div class="card-body" id="sliderContainer">
-        <img id="sliderImage" src="" alt="slider image" height="700px">
-       <div class="d-flex justify-content-center gap-3 mt-2">
+            <img id="sliderImage" src="" alt="slider image" height="700px">
+            <div class="d-flex justify-content-center gap-3 mt-2">
               <button id="prev" class="btn btn-outline-primary">
                 <i class="bi bi-arrow-left"></i> Previous
               </button>
@@ -148,26 +179,39 @@
             </div>
           </div>
         </div>
-        </div>
       </div>
     </div>
-  
+  </div>
+
   <!-- clock timer  -->
- <div class="container clock-container">
-        <h1 class="text-center text-white mb-4"><i class="fas fa-clock me-2"></i>Digital Clock</h1>
-        
-        <div class="date text-dark" id="date">Thursday, January 1, 1970</div>
-        <div class="clock" id="clock">00:00:00</div>
-        
-        <div class="controls text-center mb-4">
-            <button class="btn btn-outline-light me-2 text-dark" id="formatToggle">
-                <i class="fas fa-exchange-alt me-1"></i>Toggle 12/24 Hour Format
-            </button>
-           
-        </div>
-        
-        
+  <div class="container clock-container">
+    <h1 class="text-center text-white mb-4"><i class="fas fa-clock me-2"></i>Digital Clock</h1>
+
+    <div class="date text-dark" id="date">Thursday, January 1, 1970</div>
+    <div class="clock" id="clock">00:00:00</div>
+
+    <div class="controls text-center mb-4">
+      <button class="btn btn-outline-light me-2 text-dark" id="formatToggle">
+        <i class="fas fa-exchange-alt me-1"></i>Toggle 12/24 Hour Format
+      </button>
+
     </div>
+
+  </div>
+
+
+   <div id="quiz" class="container mt-3">
+    <h2 id="question" class="mb-4">Question will appear here</h2>
+
+    <div id="options" class="d-grid gap-2">
+      <button class="btn btn-outline-primary option">Option 1</button>
+      <button class="btn btn-outline-primary option">Option 2</button>
+      <button class="btn btn-outline-primary option">Option 3</button>
+      <button class="btn btn-outline-primary option">Option 4</button>
+    </div>
+
+    <p id="score" class="mt-3">Score: 0</p>
+  </div>
 
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
