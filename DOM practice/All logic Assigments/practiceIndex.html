@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  <title>Registration Form</title>
+</head>
+<style>
+  /* Small, clean styling for the card */
+
+
+  .card {
+    border-radius: 1rem;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, .06);
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(255, 255, 255, 0.75);
+    border-radius: 12px;
+    border: 1px solid rgba(209, 213, 219, 0.3);
+  }
+
+  .form-control:focus {
+    box-shadow: none;
+  }
+
+  li.completed {
+    text-decoration: line-through;
+    color: gray;
+    opacity: 0.7;
+  }
+
+  #sliderImage {
+    transition: opacity 0.4s ease;
+    opacity: 1;
+    border-radius: 10px;
+  }
+
+  #sliderImage.fade-out {
+    opacity: 0;
+  }
+
+  .clock-container {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 800px;
+
+  }
+
+  .clock {
+    font-size: 5rem;
+    font-weight: 700;
+    color: black;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    padding: 30px 0;
+    font-family: 'Courier New', monospace;
+    letter-spacing: 5px;
+  }
+
+  .date {
+    font-size: 1.8rem;
+    color: rgba(255, 255, 255, 0.9);
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+   #quiz {
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+      padding: 30px;
+      width: 600px;
+      text-align: center;
+    }
+    #quiz:hover{
+      background-color: rgb(214, 253, 253);
+    }
+    .option {
+      margin: 10px 0;
+      border-radius: 12px;
+      transition: transform 0.2s ease;
+    }
+
+    .option:hover {
+      transform: scale(1.03);
+    }
+
+    #score {
+      font-weight: bold;
+      margin-top: 15px;
+      color: #333;
+    }
+
+  /* floating animation */
+</style>
+
+<body class="bg-dark,text-light">
+<!-- color change theme  -->
+
+ 
+  <nav class=" m-3 ">
+    <button class="btn btn-outline-light text-dark" id="colorToggle">
+      <i class="fas fa-palette me-1"></i>Change Color Theme
+    </button>
+</nav>
+
+
+<!-- popup modal -->
+<button id="openModalBtn" class="btn btn-success">
+  Open Modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered modal modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Presented by Harsh!
+
+        </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <div class="modal-body">
+        <p class=" fw-bold fs-3">Or Sunao Kya Maze Chal Rahe he </p>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+ <!-- clock timer  -->
+  <div class="container clock-container">
+    <h1 class="text-center text-white mb-4"><i class="fas fa-clock me-2"></i>Digital Clock</h1>
+
+    <div class="date text-dark" id="date">Thursday, January 1, 1970</div>
+    <div class="clock" id="clock">00:00:00</div>
+
+    <div class="controls text-center mb-4">
+      <button class="btn btn-outline-light me-2 text-dark" id="formatToggle">
+        <i class="fas fa-exchange-alt me-1"></i>Toggle 12/24 Hour Format
+      </button>
+
+    </div>
+
+  </div>
+
+<!-- form validation -->
+  <div class="container mt-5 mb-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6 bg-light card">
+        <div class=" p-4">
+          <h3 class="text-center mb-4">Register</h3>
+          <!-- Name -->
+          <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="userName" placeholder="Enter your name" required>
+            <div id="userMsg"></div>
+          </div>
+
+          <!-- Email -->
+          <div class="mb-3">
+            <label for="email" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+            <div id="emailuserMsg"></div>
+          </div>
+
+          <!-- Password -->
+          <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" minlength="6" class="form-control" id="password" placeholder="Enter your password"
+              required>
+            <div id="passwordalert"></div>
+          </div>
+
+          <!-- Submit -->
+          <button onclick="register()" class="btn btn-primary w-100 mb-4">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Image slider  -->
+  <div class="container py-5">
+    <h1 class=" text-center mb-1 text-decoration-underline text-capitalize">Image Slider</h1>
+    <div class="row justify-content-center">
+      <div class="col-md-8 text-center">
+        <div class="card shadow">
+          <div class="card-body" id="sliderContainer">
+            <img id="sliderImage" src="" alt="slider image" height="700px">
+            <div class="d-flex justify-content-center gap-3 mt-2">
+              <button id="prev" class="btn btn-outline-primary">
+                <i class="bi bi-arrow-left"></i> Previous
+              </button>
+              <button id="next" class="btn btn-primary">
+                Next <i class="bi bi-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- Quize -->
+   <div id="quiz" class="container mt-3">
+    <h2 id="question" class="mb-4">Question will appear here</h2>
+
+    <div id="options" class="d-grid gap-2">
+      <button class="btn btn-outline-primary option">Option 1</button>
+      <button class="btn btn-outline-primary option">Option 2</button>
+      <button class="btn btn-outline-primary option">Option 3</button>
+      <button class="btn btn-outline-primary option">Option 4</button>
+    </div>
+
+    <p id="score" class="mt-3">Score: 0</p>
+  </div>
+
+ <!-- To Do List -->
+  <div class=" container bg-secondary p-3 w-50 justify-content-center text-center mt-3">
+    <h1>To Do List</h1><br>
+    <div class=" w-50 mx-auto">
+      <input type="text" class="form-control p-2 " id="floatingInput" placeholder="EnterTask">
+      <!-- <label for="floatingInput">Enter Task</label> -->
+    </div>
+    <button class="btn btn-dark w-25 m-4 p-2  " type="button" onclick="addTask()">add task</button>
+    <button class="btn btn-dark w-25  m-4 p-2 " type="button " onclick="clearList()">clear</button>
+    <ul id="taskList" class=" p-4 list-group w-50 mx-auto"></ul>
+  </div>
+
+    <!-- Counter buttons -->
+     <div class="container mt-3 text-center bg-white p-3 mb-3" style="width: 600px;"> 
+  <div class="text-center bg-dark text-white p-4 fw-bold fs-1 w-50 mx-auto" id="counter">Counter: 0</div>
+    <div class="mt-3 w-50 mx-auto">
+      <button type="button" class="btn btn-secondary w-25" id="decrease">-</button>
+        <button type="button" class="btn btn-success w-25" id="increase">+</button>
+        <button type="button" class="btn btn-danger w-25" id="reset">Reset</button>
+      </div>
+     
+     </div>
+
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <script src="./script.js">
+
+  </script>
+
+</body>
+
+</html>
