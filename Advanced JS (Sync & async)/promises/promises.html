@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+
+
+    <script>
+
+
+        setTimeout
+        let chaiByRohan = new Promise((resolve , reject)=>{
+            piladi = true
+
+            if(piladi){
+                resolve('piladi')
+            }else{
+                reject('nhi aaya yrr')
+            }
+        })
+
+        chaiByRohan.then((result)=>{
+            console.log('Piladi', result)
+        })
+        .catch((error)=>{
+            console.log('nhi pilayi', error)
+        })
+    </script>
+</body>
+</html>
